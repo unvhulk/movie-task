@@ -77,18 +77,13 @@ export const MovieDetails = ({ selectedMovie }) => {
 		return likedMovies.some((likedMovie) => likedMovie.id === selectedMovie.id);
 	});
 	const [viewCount, setViewCount] = useState(
-		JSON.parse(localStorage.getItem("views")) || 0
+		JSON.parse(localStorage.getItem(selectedMovie.id)) || 0
 	);
 	const navigate = useNavigate();
 
 	const handleViewCount = () => {
 		setViewCount(viewCount + 1);
-		const obj = localStorage.getItem("views") ?? {};
-		console.log(obj);
-		const newObj = { ...obj };
-		console.log(newObj);
-		newObj[selectedMovie.id] = viewCount + 1;
-		localStorage.setItem("views", JSON.stringify(newObj));
+		localStorage.setItem(selectedMovie.id, JSON.stringify(viewCount + 1));
 	};
 
 	const handleLikeButtonClick = () => {
