@@ -119,6 +119,7 @@ export const MovieDetails = ({ selectedMovie }) => {
 				/>
 				<MovieDetailsInfo>
 					<MovieDetailsTitle>{selectedMovie.title}</MovieDetailsTitle>
+					<MovieRatings>Rating: {selectedMovie.popularity}</MovieRatings>
 					<MovieDetailsOverview>{selectedMovie.overview}</MovieDetailsOverview>
 					<MovieReleaseDate>{selectedMovie.release_date}</MovieReleaseDate>
 					<MovieRatings></MovieRatings>
